@@ -3,6 +3,7 @@ import random
 
 #creating screen
 screen= Tk()
+screen.title("Password Generator")
 screen.geometry("550x300")
 
 def password():
@@ -18,7 +19,7 @@ def password():
         x=x+(random.choice(elements))
     pwd.insert(0,x)
 
-lf=LabelFrame( screen,text="Enter the length of Password",font=("cursive",15))
+lf=LabelFrame(screen,text="Enter the length of Password",font=("cursive",15))
 lf.pack(pady=20)
 
 entry=Entry(lf,font=("cursive",16),background="lightgray")
