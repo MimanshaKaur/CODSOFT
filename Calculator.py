@@ -3,7 +3,7 @@ from tkinter import *
 #creating screen
 screen=Tk()
 screen.title("CALCULATOR")
-screen.geometry("450x600")
+screen.geometry("450x550")
 screen.configure(background="black")
 
 def btn_click(item):
@@ -27,7 +27,7 @@ expression= ""
 input_text= StringVar()
 
 lf=LabelFrame(screen)
-lf.pack(side=TOP)
+lf.pack(pady=10)
 
 output=Entry(lf,textvariable=input_text,font=("cursive",25),background="darkgray",width=20,justify=RIGHT)
 output.pack(pady=20,padx=20)
