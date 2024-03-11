@@ -20,7 +20,7 @@ def res():
     global expression
     result=str(eval(expression))
     input_text.set(result)
-    expression=""
+    expression= ""
 
 #creating calculator
 expression=""
@@ -37,7 +37,7 @@ button_frame=Frame(screen,width=350,height=380,background="black",borderwidth=10
 button_frame.pack()
 
 #creating buttons
-nine=Button(button_frame,text=9,font=("cursive",20),width=5,height=2,fg="black",bg="red",command= btn_click(9))
+nine=Button(button_frame,text=9,font=("cursive",20),width=5,height=2,fg="white",bg="red",command= btn_click(9))
 nine.grid(row=1,column=3,padx=7,pady=7)
 
 eight=Button(button_frame,text=8,font=("cursive",20),width=5,height=2,fg="white",bg="red",command= btn_click(8))
