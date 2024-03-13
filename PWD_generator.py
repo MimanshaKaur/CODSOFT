@@ -5,6 +5,7 @@ import random
 screen= Tk()
 screen.title("Password Generator")
 screen.geometry("550x300")
+screen.configure(background="#B8B8FF")
 
 def password():
     pwd.delete(0,END)
