@@ -4,7 +4,7 @@ from tkinter import *
 screen=Tk()
 screen.title("CALCULATOR")
 screen.geometry("450x550")
-screen.configure(background="black")
+screen.configure(background="#1b263b")
 
 def btn_click(item):
     global expression
