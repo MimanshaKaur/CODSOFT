@@ -1,5 +1,5 @@
 # CODSOFT: 
-Python Projects:
+# Python Projects:
 
 Project 1: Calculator
 Project 2: Password Generator
