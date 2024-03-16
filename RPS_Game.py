@@ -1,10 +1,9 @@
 from tkinter import *
 import random
-import time
 #creating screen
 screen=Tk()
 screen.title("Rock-Paper-Scissor Game")
-screen.geometry("800x650")
+screen.geometry("800x680")
 screen.resizable(0,0)
 screen.configure(background="#bde0fe")
 
@@ -23,8 +22,6 @@ def user_choice(item):
         ch=""
         count="0"
         tie=0
-        user_win=0
-        comp_win=0
         i=input_choice.get()
         c=comp_ch.get()
         while(count=="0"):
@@ -41,6 +38,7 @@ def user_choice(item):
         ctr=ctr+1
     choice=""
     ch=""
+    score()
 def replay():
     global ctr
     ctr=0
@@ -52,17 +50,37 @@ def replay():
 
 def close():
     screen.quit()
+def score():
+    i=input_choice.get()
+    c=comp_ch.get()
+    global tie_score,user_score,comp_score
+    global tie,user,comp
+    if((i=="ROCK" and c=="ROCK") or (i=="PAPER" and c=="PAPER") or (i=="SCISSOR" and c=="SCISSOR")):
+        tie+=1
+    if((i=="ROCK" and c=="SCISSOR") or (i=="PAPER" and c=="ROCK") or (i=="SCISSOR" and c=="PAPER")):
+        user+=1
+    if((c=="ROCK" and i=="SCISSOR") or (c=="PAPER" and i=="ROCK") or (c=="SCISSOR" and i=="PAPER")):
+        comp+=1
+    tie_score.set(str(tie))
+    user_score.set(str(user))
+    comp_score.set(str(comp))
 
 choice=""
 ch=""
 ctr=0
+tie=0
+user=0
+comp=0
 input_choice=StringVar()
 comp_ch=StringVar()
+user_score=StringVar()
+tie_score=StringVar()
+comp_score=StringVar()
 lf=Label(screen,text="ROCK-PAPER-SCISSOR",font=("cursive",15,"bold"),bg="#219ebc",fg="#fff",width="30")
-lf.pack(pady=20)
+lf.pack(pady=10)
 
 f0=Frame(screen,bg="#bde0fe")
-f0.pack(pady=20)
+f0.pack(pady=5)
 
 f1=Frame(f0,width="250",height=150,bg="#a2d2ff")
 f1.grid(row=1,column=1, padx=20)
@@ -104,17 +122,38 @@ entry2=Entry(f3,textvariable=comp_ch,font=("cursive",16,"bold"),background="#e35
 entry2.pack(padx=20,pady=10)
 
 lf2=LabelFrame(screen,text="RESULT",font=("cursive",16,"bold"),width="300",background="#bde0fe")
-lf2.pack(padx=50)
+lf2.pack(padx=50,pady=15)
 
 output=Entry(lf2,textvariable=' ',font=("cursive",16,"bold"),background="#219ebc",fg="black",justify=CENTER)
-output.pack(pady=5,padx=50)
+output.pack(pady=10,padx=50)
 
 frame4=Frame(screen,bg="#a2d2ff")
-frame4.pack(pady=20)
+frame4.pack(pady=15)
 
-replay_btn=Button(frame4,text="REPLAY GAME",font=("cursive",16,"bold"),width="35",background="#219ebc",fg="#fff",command=replay)
+users1=Label(frame4,text="USER's SCORE",font=("cursive",12,"bold"),width="18",background="#219ebc",fg="#fff")
+users1.grid(row=1,column=1,padx=20,pady=4)
+
+users=Label(frame4,textvariable=user_score,font=("cursive",16,"bold"),width="10",background="#219ebc",fg="#fff")
+users.grid(row=2,column=1,padx=20,pady=10)
+
+ties1=Label(frame4,text="TIE SCORE",font=("cursive",12,"bold"),width="18",background="#219ebc",fg="#fff")
+ties1.grid(row=1,column=2,padx=20,pady=4)
+
+ties=Label(frame4,textvariable=tie_score,font=("cursive",16,"bold"),width="10",background="#219ebc",fg="#fff")
+ties.grid(row=2,column=2,padx=20,pady=10)
+
+comps1=Label(frame4,text="COMPUTER's SCORE",font=("cursive",12,"bold"),width="20",background="#219ebc",fg="#fff")
+comps1.grid(row=1,column=3,padx=20,pady=4)
+
+comps=Label(frame4,textvariable=comp_score,font=("cursive",16,"bold"),width="10",background="#219ebc",fg="#fff")
+comps.grid(row=2,column=3,padx=20,pady=10)
+
+frame5=Frame(screen,bg="#a2d2ff")
+frame5.pack(pady=10)
+
+replay_btn=Button(frame5,text="REPLAY GAME",font=("cursive",12,"bold"),width="30",background="#e35053",fg="#fff",command=replay)
 replay_btn.grid(row=1,padx=20,pady=8)
 
-close_btn=Button(frame4,text="CLOSE GAME",font=("cursive",16,"bold"),width="25",background="#219ebc",fg="#fff",command=close)
+close_btn=Button(frame5,text="CLOSE GAME",font=("cursive",12,"bold"),width="20",background="#e35053",fg="#fff",command=close)
 close_btn.grid(row=2,padx=20,pady=10)
 screen.mainloop()
