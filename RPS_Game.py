@@ -49,29 +49,35 @@ def replay():
     input_choice.set(choice)
     comp_ch.set(ch)
     output.delete(0,END)
+    global ctr2
+    ctr2=0
 
 def close():
     screen.quit()
 
 def score():
-    i=input_choice.get()
-    c=comp_ch.get()
-    global tie_score,user_score,comp_score
-    global tie,user,comp
-    if((i=="ROCK" and c=="ROCK") or (i=="PAPER" and c=="PAPER") or (i=="SCISSOR" and c=="SCISSOR")):
-        tie+=1
-    if((i=="ROCK" and c=="SCISSOR") or (i=="PAPER" and c=="ROCK") or (i=="SCISSOR" and c=="PAPER")):
-        user+=1
-    if((c=="ROCK" and i=="SCISSOR") or (c=="PAPER" and i=="ROCK") or (c=="SCISSOR" and i=="PAPER")):
-        comp+=1
-    tie_score.set(str(tie))
-    user_score.set(str(user))
-    comp_score.set(str(comp))
+    global ctr2
+    while(ctr2==0):
+        i=input_choice.get()
+        c=comp_ch.get()
+        global tie_score,user_score,comp_score
+        global tie,user,comp
+        if((i=="ROCK" and c=="ROCK") or (i=="PAPER" and c=="PAPER") or (i=="SCISSOR" and c=="SCISSOR")):
+            tie+=1
+        if((i=="ROCK" and c=="SCISSOR") or (i=="PAPER" and c=="ROCK") or (i=="SCISSOR" and c=="PAPER")):
+            user+=1
+        if((c=="ROCK" and i=="SCISSOR") or (c=="PAPER" and i=="ROCK") or (c=="SCISSOR" and i=="PAPER")):
+            comp+=1
+        tie_score.set(str(tie))
+        user_score.set(str(user))
+        comp_score.set(str(comp))
+        ctr2+=1
 
 #creating screen elements
 choice=""
 ch=""
 ctr=0
+ctr2=0
 tie=0
 user=0
 comp=0
