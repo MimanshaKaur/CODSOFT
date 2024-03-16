@@ -1,4 +1,4 @@
-# CODSOFT: 
+# CODSOFT:
 # Python Projects:
 
 Project 1: Calculator
