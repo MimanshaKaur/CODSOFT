@@ -70,19 +70,19 @@ f1.grid(row=1,column=1, padx=20)
 f11=Label(f1,text="USER's CHOICE: \n Please Make Your Selection",font=("cursive",11,"bold"),bg="#e35053",fg="#fff",width="25")
 f11.pack(padx=10,pady=10)
 
-f12=Button(f1,text="ROCK",font=("cursive",12,"bold"),bg="#ff337e",fg="black",width="20",command=lambda: user_choice("ROCK"))
+f12=Button(f1,text="ROCK",font=("cursive",12,"bold"),bg="#fe938c",fg="black",width="20",command=lambda: user_choice("ROCK"))
 f12.pack(padx=20,pady=10)
 
-f13=Button(f1,text="PAPER",font=("cursive",12,"bold"),bg="#ff337e",fg="black",width="20",command=lambda: user_choice("PAPER"))
+f13=Button(f1,text="PAPER",font=("cursive",12,"bold"),bg="#fe938c",fg="black",width="20",command=lambda: user_choice("PAPER"))
 f13.pack(padx=20,pady=10)
 
-f14=Button(f1,text="SCISSOR",font=("cursive",12,"bold"),bg="#ff337e",fg="black",width="20",command=lambda: user_choice("SCISSOR"))
+f14=Button(f1,text="SCISSOR",font=("cursive",12,"bold"),bg="#fe938c",fg="black",width="20",command=lambda: user_choice("SCISSOR"))
 f14.pack(padx=20,pady=10)
 
-entry1=Entry(f1,textvariable=input_choice,font=("cursive",16,"bold"),background="black",fg="#fff",justify=CENTER)
+entry1=Entry(f1,textvariable=input_choice,font=("cursive",16,"bold"),background="#e35053",fg="#fff",justify=CENTER)
 entry1.pack(padx=20,pady=10)
 
-f2=Label(f0,text="V/S",font=("cursive",15,"bold"),bg="#a2d2ff",fg="#fff",width="5")
+f2=Label(f0,text="V/S",font=("cursive",15,"bold"),bg="#a2d2ff",fg="black",width="5")
 f2.grid(row=1,column=2,padx=20)
 
 f3=Frame(f0,width="250",bg="#a2d2ff",height="250")
@@ -91,16 +91,16 @@ f3.grid(row=1,column=3,padx=20)
 f31=Label(f3,text="COMPUTER's CHOICE\n",font=("cursive",14,"bold"),bg="#e35053",fg="#fff",width="22")
 f31.pack(padx=10,pady=10)
 
-f32=Label(f3,text="ROCK",font=("cursive",14,"bold"),bg="#ff337e",fg="black",width="20")
+f32=Label(f3,text="ROCK",font=("cursive",14,"bold"),bg="#fe938c",fg="black",width="20")
 f32.pack(padx=20,pady=10)
 
-f33=Label(f3,text="PAPER",font=("cursive",14,"bold"),bg="#ff337e",fg="black",width="20")
+f33=Label(f3,text="PAPER",font=("cursive",14,"bold"),bg="#fe938c",fg="black",width="20")
 f33.pack(padx=20,pady=10)
 
-f34=Label(f3,text="SCISSOR",font=("cursive",14,"bold"),bg="#ff337e",fg="black",width="20")
+f34=Label(f3,text="SCISSOR",font=("cursive",14,"bold"),bg="#fe938c",fg="black",width="20")
 f34.pack(padx=20,pady=10)
 
-entry2=Entry(f3,textvariable=comp_ch,font=("cursive",16,"bold"),background="black",fg="#fff",justify=CENTER)
+entry2=Entry(f3,textvariable=comp_ch,font=("cursive",16,"bold"),background="#e35053",fg="#fff",justify=CENTER)
 entry2.pack(padx=20,pady=10)
 
 lf2=LabelFrame(screen,text="RESULT",font=("cursive",16,"bold"),width="300",background="#bde0fe")
