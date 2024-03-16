@@ -7,6 +7,7 @@ screen.geometry("800x680")
 screen.resizable(0,0)
 screen.configure(background="#bde0fe")
 
+#functions/methods
 def user_choice(item):
     global ctr
     while(ctr==0):
@@ -39,6 +40,7 @@ def user_choice(item):
     choice=""
     ch=""
     score()
+
 def replay():
     global ctr
     ctr=0
@@ -50,6 +52,7 @@ def replay():
 
 def close():
     screen.quit()
+
 def score():
     i=input_choice.get()
     c=comp_ch.get()
@@ -65,6 +68,7 @@ def score():
     user_score.set(str(user))
     comp_score.set(str(comp))
 
+#creating screen elements
 choice=""
 ch=""
 ctr=0
@@ -156,4 +160,5 @@ replay_btn.grid(row=1,padx=20,pady=8)
 
 close_btn=Button(frame5,text="CLOSE GAME",font=("cursive",12,"bold"),width="20",background="#e35053",fg="#fff",command=close)
 close_btn.grid(row=2,padx=20,pady=10)
+
 screen.mainloop()
