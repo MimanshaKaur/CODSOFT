@@ -1,5 +1,6 @@
 from tkinter import *
 import random
+
 #creating screen
 screen=Tk()
 screen.title("Rock-Paper-Scissor Game")
@@ -22,7 +23,6 @@ def user_choice(item):
         comp_ch.set(ch)
         ch=""
         count="0"
-        tie=0
         i=input_choice.get()
         c=comp_ch.get()
         while(count=="0"):
